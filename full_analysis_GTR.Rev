@@ -1,0 +1,37 @@
+################################################################################
+#
+# RevBayes Example: Bayesian model testing using posterior predictive simulation
+#
+# authors: Lyndon M. Coghill, Sebastian Hoehna and Jeremy M. Brown
+#
+################################################################################
+
+## EMPIRICAL MCMC
+inFile = "data/primates_and_galeopterus_cytb.nex"
+analysis_name = "primates"
+data <- readDiscreteCharacterData(inFile)
+model_name = "GTR"
+model_file_name = "scripts/"+model_name+"_Model.Rev"
+source("scripts/MCMC_Simulation.Rev")
+clear()
+
+## POSTERIOR PREDICTIVE DATA SIMULATION
+inFile = "data/primates_and_galeopterus_cytb.nex"
+analysis_name = "primates"
+data <- readDiscreteCharacterData(inFile)
+model_name = "GTR"
+model_file_name = "scripts/"+model_name+"_Model.Rev"
+source("scripts/PosteriorPredictive_Simulation.Rev")
+clear()
+
+## POSTERIOR PREDICTIVE MCMC
+inFile = "data/primates_and_galeopterus_cytb.nex"
+analysis_name = "primates"
+data <- readDiscreteCharacterData(inFile)
+model_name = "GTR"
+model_file_name = "scripts/"+model_name+"_Model.Rev"
+source("scripts/PosteriorPredictive_MCMC.Rev")
+clear()
+
+# END IT ALL
+q()
